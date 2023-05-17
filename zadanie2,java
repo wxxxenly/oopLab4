@@ -1,0 +1,62 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package delete_final_letter;
+
+/*
+ * @author @danil
+ */
+import java.util.Scanner;
+import java.util.InputMismatchException; 
+import java.util.Arrays;
+
+public class Delete_final_letter {
+
+    /*
+    * @param args the command line arguments
+    */
+    static String[] arrayName;
+    static int size;
+
+    static Scanner sc1 = new Scanner(System.in );
+    public static void main(String[] args) {
+        // TODO code application logic here
+        m1();
+        System.out.println(Arrays.toString(arrayName));
+    }
+    
+    static void m1(){
+
+        System.out.println("Введите число строк"); 
+    
+        try
+            { 
+                size = sc1.nextInt(); 
+
+            } 
+        catch(InputMismatchException fg){ 
+        // если введенное значение не является числом 
+        System.out.print("Вы ввели не число. " ); 
+    } 
+ 
+
+    arrayName = new String[size];
+    for (int i = 0; i < size; i++){ 
+        System. out.println( " Введите строку №" + (i+1));
+        arrayName[i] = sc1.next() ; 
+    }
+   
+    for (int i = 0; i < size; i++){
+        boolean d=arrayName[i].endsWith("e");
+        if(d ==true){
+            int k=arrayName[i].lastIndexOf("e");
+            arrayName[i]=arrayName[i].substring(0, k);
+            }
+        }
+    for (int i = 0; i < size; i++){
+        System. out.println( " Строка " + arrayName[i]);
+    }
+  }
+}
